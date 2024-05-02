@@ -4,10 +4,10 @@ import numpy as np
 import pickle
 
 # Load the model
-clf = pickle.load(open("dtc_model.pkl","rb"))
+clf = pickle.load(open("rf_model_v1.pkl","rb"))
 
 def predict(data):
-    clf = pickle.load(open("dtc_model.pkl","rb"))
+    clf = pickle.load(open("rf_model_v1.pkl","rb"))
     return clf.predict(data)
 
 st.title("Insurance Fraud Detection Project using Machine Learning")
