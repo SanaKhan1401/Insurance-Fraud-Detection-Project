@@ -47,4 +47,4 @@ if st.button("Predict Fraud"):
     result = predict(input_data)
     st.text(result[0])
 
-st.markdown("Developed by External Guide Avinash Pawar and WBL Intern Khan Sana at NIELIT Daman")
+st.markdown("Developed by WBL Intern Khan Sana  at NIELIT Daman")
