@@ -54,6 +54,6 @@ with col3:
 
     input_data = np.array([[ag, wt, ca, si, si1, ih, oc, gr1, ct, cp, pp, cg, cl]])
     st.write("Input Data for Prediction:", input_data)
-    st.text(result[0])
+
 
 st.markdown("Developed by WBL Intern Khan Sana  at NIELIT Daman")
