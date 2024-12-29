@@ -1,1 +1,1 @@
-We are compairing varopous model to detect fraud 
+We are compairing various model to detect fraud.
