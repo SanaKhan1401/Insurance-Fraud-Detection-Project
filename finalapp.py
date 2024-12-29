@@ -53,7 +53,11 @@ with col3:
 
 
     input_data = np.array([[ag, wt, ca, si, si1, ih, oc, gr1, ct, cp, pp, cg, cl]])
-    st.write("Input Data for Prediction:", input_data)
+    result = predict(input_data)
+    if result[0] == 1:
+        st.success("Fraud Reported")
+    else:
+        st.info("No Fraud Reported")
 
 
 st.markdown("Developed by WBL Intern Khan Sana  at NIELIT Daman")
