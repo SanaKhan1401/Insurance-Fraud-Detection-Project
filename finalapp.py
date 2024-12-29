@@ -43,7 +43,7 @@ if st.button("Predict Fraud"):
     cp = 1 if cp in ['Fire Authority', 'No Contact', 'Other Contacted', 'Contacted Police'] else 0
     pp = 1 if pp in ['Low Premium', 'Medium Premium', 'Very High Premium', 'Very Low Premium'] else 0
 
-    input_data = np.array([[ag,wt,ca,oc,gr1,ct,si,cp,pp,cg,si1,cl,ih,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]])
+    input_data = np.array([[ag,wt,ca,oc,gr1,ct,si,cp,pp,cg,si1,cl,ih,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]])
     result = predict(input_data)
     st.text(result[0])
 
