@@ -55,7 +55,7 @@ with col3:
     )
 
 # Encode categorical inputs
-sex_encoded = [1, 0] if sex == "FEMALE" else [0, 1]
+sex_encoded =[1 if sex == "MALE" else 0, 1 if sex == "FEMALE" else 0]
 hobby_encoded = [1 if hobby == "chess" else 0, 1 if hobby == "cross-fit" else 0, 1 if hobby == "other" else 0]
 
 occupation_columns = [
