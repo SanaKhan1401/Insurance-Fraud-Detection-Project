@@ -80,6 +80,11 @@ incident_severity_encoded = [1 if incident_severity == col else 0 for col in inc
 authorities_contacted_columns = ["Ambulance", "Fire", "None", "Other", "Police"]
 authorities_contacted_encoded = [1 if authorities_contacted == col else 0 for col in authorities_contacted_columns]
 
+# Additional features (set to default values as required)
+age_group_encoded = [0] * 8  # Adjust the size as per your dataset
+customer_group_encoded = [0] * 6  # Adjust the size as per your dataset
+policy_premium_group_encoded = [0] * 5  # Adjust the size as per your dataset
+
 # Construct the input data array
 input_data = np.array([[
     capital_gains, capital_loss, incident_hour, vehicles_involved, witnesses, claim_amount,
@@ -88,7 +93,10 @@ input_data = np.array([[
     *incident_type_encoded,
     *collision_type_encoded,
     *incident_severity_encoded,
-    *authorities_contacted_encoded
+    *authorities_contacted_encoded,
+    *age_group_encoded,
+    *customer_group_encoded,
+    *policy_premium_group_encoded
 ]])
 
 # Predict and display results
