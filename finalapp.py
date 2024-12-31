@@ -104,6 +104,7 @@ input_data = np.array([[
 
 # Debugging: Display input data shape
 st.write("Input Data Shape:", input_data.shape)
+st.write("Created by Khan Sana WBL Intern at NIELIT ,Daman")
 
 # Validate feature count
 if st.button("Predict Fraud"):
@@ -115,4 +116,4 @@ if st.button("Predict Fraud"):
             st.success("Fraud Reported")
         else:
             st.info("No Fraud Reported")
-            st.write("Created by Khan Sana WBL Intern at NIELIT ,Daman")
+            
