@@ -80,10 +80,10 @@ incident_severity_encoded = [1 if incident_severity == col else 0 for col in inc
 authorities_contacted_columns = ["Ambulance", "Fire", "None", "Other", "Police"]
 authorities_contacted_encoded = [1 if authorities_contacted == col else 0 for col in authorities_contacted_columns]
 
-# Additional features (set to default values as required)
-age_group_encoded = [0] * 8  # Adjust the size as per your dataset
-customer_group_encoded = [0] * 6  # Adjust the size as per your dataset
-policy_premium_group_encoded = [0] * 5  # Adjust the size as per your dataset
+# Missing additional features
+age_group_encoded = [0, 0, 0, 0, 0, 0, 0, 0]  # Default values for age groups
+customer_group_encoded = [0, 0, 0, 0, 0, 0]   # Default values for customer groups
+policy_premium_group_encoded = [0, 0, 0, 0, 0]  # Default values for policy premium groups
 
 # Construct the input data array
 input_data = np.array([[
@@ -101,10 +101,13 @@ input_data = np.array([[
 
 # Predict and display results
 if st.button("Predict Fraud"):
-    result = predict(input_data)
-    if result[0] == 1:
-        st.success("Fraud Reported")
+    if input_data.shape[1] != 67:
+        st.error(f"Input data shape mismatch: {input_data.shape[1]} features, expected 67.")
     else:
-        st.info("No Fraud Reported")
+        result = predict(input_data)
+        if result[0] == 1:
+            st.success("Fraud Reported")
+        else:
+            st.info("No Fraud Reported")
 
 st.markdown("Developed by WBL Intern Khan Sana at NIELIT Daman")
