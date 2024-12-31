@@ -34,6 +34,7 @@ with col2:
          "other-service", "priv-house-serv", "prof-specialty", 
          "protective-serv", "sales", "tech-support", "transport-moving"]
     )
+    hobby = st.selectbox("Hobby", ["chess", "cross-fit", "other"])
 
 with col3:
     incident_type = st.selectbox(
@@ -55,6 +56,7 @@ with col3:
 
 # Encode categorical inputs
 sex_encoded = [1, 0] if sex == "FEMALE" else [0, 1]
+hobby_encoded = [1 if hobby == "chess" else 0, 1 if hobby == "cross-fit" else 0, 1 if hobby == "other" else 0]
 
 occupation_columns = [
     "adm-clerical", "armed-forces", "craft-repair", "exec-managerial",
@@ -90,6 +92,7 @@ input_data = np.array([[
     capital_gains, capital_loss, incident_hour, vehicles_involved, witnesses, claim_amount,
     *sex_encoded,
     *occupation_encoded,
+    *hobby_encoded,
     *incident_type_encoded,
     *collision_type_encoded,
     *incident_severity_encoded,
