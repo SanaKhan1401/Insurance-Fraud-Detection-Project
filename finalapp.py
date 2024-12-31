@@ -82,7 +82,7 @@ incident_severity_encoded = [1 if incident_severity == col else 0 for col in inc
 authorities_contacted_columns = ["Ambulance", "Fire", "None", "Other", "Police"]
 authorities_contacted_encoded = [1 if authorities_contacted == col else 0 for col in authorities_contacted_columns]
 
-# Additional features
+# Default values for additional encoded features
 age_group_encoded = [0, 0, 0, 0, 0, 0, 0, 0]  # 8 age groups
 customer_group_encoded = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # 10 customer groups
 policy_premium_group_encoded = [0, 0, 0, 0, 0]  # 5 policy premium groups
@@ -102,8 +102,10 @@ input_data = np.array([[
     *policy_premium_group_encoded
 ]])
 
-# Validate feature count
+# Debugging: Display input data shape
 st.write("Input Data Shape:", input_data.shape)
+
+# Validate feature count
 if st.button("Predict Fraud"):
     if input_data.shape[1] != 67:
         st.error(f"Input data shape mismatch: {input_data.shape[1]} features, expected 67.")
