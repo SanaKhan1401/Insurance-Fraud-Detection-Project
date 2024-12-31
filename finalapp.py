@@ -115,3 +115,4 @@ if st.button("Predict Fraud"):
             st.success("Fraud Reported")
         else:
             st.info("No Fraud Reported")
+            st.write("Created by Khan Sana WBL Intern at NIELIT ,Daman")
