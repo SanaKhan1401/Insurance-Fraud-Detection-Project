@@ -83,7 +83,7 @@ authorities_contacted_columns = ["Ambulance", "Fire", "None", "Other", "Police"]
 authorities_contacted_encoded = [1 if authorities_contacted == col else 0 for col in authorities_contacted_columns]
 
 # Default values for additional encoded features
-age_group_encoded = [0, 0, 0, 0, 0, 0, 0, 0]  # 8 age groups
+age_group_encoded = [0, 0, 0, 0, 0, 0, 0, 0,0,0]  # 10 age groups
 customer_group_encoded = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # 10 customer groups
 policy_premium_group_encoded = [0, 0, 0, 0, 0]  # 5 policy premium groups
 
